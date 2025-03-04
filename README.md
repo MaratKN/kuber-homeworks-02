@@ -55,25 +55,34 @@ root@DebianNew:~/.kube# nano netology-web.yaml
 ![alt text](https://github.com/MaratKN/kuber-homeworks-02/blob/main/4.png)
 
 
-root@DebianNew:~/.kube# kubectl apply -f netology-web.yaml 
+root@DebianNew:~/.kube# kubectl apply -f netology-web.yaml
+
 pod/netology-web created
+
 root@DebianNew:~/.kube# kubectl get pods -o wide
+```
 NAME           READY   STATUS    RESTARTS   AGE   IP             NODE        NOMINATED NODE   READINESS GATES
 kmn            1/1     Running   1          31m   192.168.40.3   debiannew   <none>           <none>
 netology-web   1/1     Running   0          5s    192.168.40.8   debiannew   <none>           <none>
+```
+
 root@DebianNew:~/.kube# nano netology-svc.yaml
 
 ![alt text](https://github.com/MaratKN/kuber-homeworks-02/blob/main/5.png)
 
 root@DebianNew:~/.kube# kubectl apply -f netology-svc.yaml 
+
 service/netology-svc created
 
 ![alt text](https://github.com/MaratKN/kuber-homeworks-02/blob/main/6.png)
 
 root@DebianNew:~/.kube# kubectl get svc -o wide
+```
 NAME           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE    SELECTOR
 kubernetes     ClusterIP   10.152.183.1     <none>        443/TCP    2d9h   <none>
 netology-svc   ClusterIP   10.152.183.242   <none>        8080/TCP   39s    app=netology
+```
+
 root@DebianNew:~/.kube# kubectl port-forward services/netology-svc 8081:8080
 
 ![alt text](https://github.com/MaratKN/kuber-homeworks-02/blob/main/7.png)
