@@ -39,7 +39,7 @@ kubectl get pods -o wide
 
 kubectl port-forward pods/kmn 8080
 
-![alt text](https://github.com/MaratKN/kuber-homeworks-02/blob/main/3.png)
+![alt text](https://github.com/MaratKN/kuber-homeworks-02/blob/main/3_v2.png)
 
 ------
 
